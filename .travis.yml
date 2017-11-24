@@ -4,7 +4,7 @@ before_install:
 script:
   - chmod +x ./cas-overlay-template/build.sh
   - cd cas-overlay-template
-  - ./build.sh package
+  - sudo ./build.sh package
   - cd ..
   - tar czvf cas.gz cas-overlay-template
 deploy:
