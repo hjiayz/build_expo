@@ -1,0 +1,13 @@
+language: java
+before_install:
+  - git clone https://github.com/apereo/cas-overlay-template
+script:
+  - ./cas-overlay-template/build.sh package
+  - tar czvf cas.gz cas-overlay-template
+deploy:
+  provider: releases
+  api_key: $CI_USER_TOKEN
+  file: cas.gz
+  skip_cleanup: true
+  on:
+tags: true
