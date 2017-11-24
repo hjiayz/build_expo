@@ -9,8 +9,8 @@ script:
   - tar czvf cas.gz ./cas-overlay-template/target
   - wget http://devtools.qiniu.com/2.1.6/qshell-linux-x64
   - chmod +x qshell-linux-x64
-  - qshell-linux-x64 account $ak $sk
-  - qshell-linux-x64 rput abcd2 cas.gz ./cas.gz true application/x-gzip http://upload-na0.qiniu.com 1
+  - ./qshell-linux-x64 account $ak $sk
+  - ./qshell-linux-x64 rput abcd2 cas.gz ./cas.gz true application/x-gzip http://upload-na0.qiniu.com 1
 deploy:
   provider: releases
   api_key: $CI_USER_TOKEN
