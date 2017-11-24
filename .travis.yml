@@ -3,7 +3,9 @@ before_install:
   - git clone https://github.com/apereo/cas-overlay-template
 script:
   - chmod +x ./cas-overlay-template/build.sh
-  - ./cas-overlay-template/build.sh package
+  - cd cas-overlay-template
+  - ./build.sh package
+  - cd ..
   - tar czvf cas.gz cas-overlay-template
 deploy:
   provider: releases
