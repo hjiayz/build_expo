@@ -6,7 +6,7 @@ script:
   - cd cas-overlay-template
   - sudo ./build.sh package
   - cd ..
-  - gzip cas.gz ./cas-overlay-template/target/cas.war
+  - gzip –c ./cas-overlay-template/target/cas.war > cas.gz
   - wget http://devtools.qiniu.com/2.1.6/qshell-linux-x64
   - chmod +x qshell-linux-x64
   - ./qshell-linux-x64 account $ak $sk
