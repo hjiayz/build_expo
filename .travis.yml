@@ -7,8 +7,8 @@ before_install:
   - export ANDROID_NDK=/home/travis/build/hjiayz/build_expo/android-ndk-r10e
 script:
   - wget http://dl.google.com/android/tools_r25.2.5-linux.zip
-  - tar xvf android-sdk_r25.2.5-linux.tgz
-  - export ANDROID_SDK=/home/travis/build/hjiayz/build_expo/android-sdk_r25.2.5-linux
+  - unzip tools_r25.2.5-linux.zip
+  - export ANDROID_SDK=/home/travis/build/hjiayz/build_expo/tools_r25.2.5-linux
   - npm install gulp-cli -g
   - cd expo
   - cd js
