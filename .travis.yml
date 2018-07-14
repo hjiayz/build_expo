@@ -5,9 +5,9 @@ before_install:
   - export export ANDROID_NDK=./android-ndk-r10e
 script:
   - npm install gulp-cli -g
-  - cd android
+  - cd ./expo/android
   - ./run.sh
-  - cd ..
+  - cd ../../
 deploy:
   provider: releases
   api_key: $CI_USER_TOKEN
