@@ -1,21 +1,17 @@
-language: java
+language: node
 before_install:
-  - git clone https://github.com/apereo/cas-overlay-template
+  - https://github.com/expo/expo.git
+  - if [ ! -d ./android-ndk-r10e ];then wget http://dl.google.com/android/ndk/android-ndk-r10e-linux-x86_64.bin ; sudo chmod a+x android-ndk-r10e-linux-x86_64.bin ; ./android-ndk-r10e-linux-x86_64.bin > /dev/null ; fi
+  - ./android-configure ./android-ndk-r10e
 script:
-  - chmod +x ./cas-overlay-template/build.sh
-  - cd cas-overlay-template
-  - sudo ./build.sh package
+  - npm install gulp-cli -g
+  - cd android
+  - ./run.sh
   - cd ..
-  - tar czf cas.gz ./cas-overlay-template/target/cas.war
-  - wget http://devtools.qiniu.com/2.1.6/qshell-linux-x64
-  - chmod +x qshell-linux-x64
-  - ./qshell-linux-x64 account $ak $sk
-  - ./qshell-linux-x64 rput abcd2 cas.gz ./cas.gz true application/x-gzip http://upload-na0.qiniu.com 1
-  - ./qshell-linux-x64 rput abcd cas.gz ./cas.gz true application/x-gzip http://upload.qiniu.com 1
 deploy:
   provider: releases
   api_key: $CI_USER_TOKEN
-  file: cas.gz
+  file: expo.apk
   skip_cleanup: true
   on:
 tags: true
