@@ -21,6 +21,7 @@ script:
   - cd tools-public
   - gulp android-shell-app --url a.b.c --sdkVersion 25
   - cd ../../
+  - cp /tmp/shell-debug.apk expo.apk
 deploy:
   provider: releases
   api_key: $CI_USER_TOKEN
