@@ -4,7 +4,7 @@ node_js:
 before_install:
   - git clone https://github.com/expo/expo.git
   - if [ ! -d ./android-ndk-r10e ];then wget http://dl.google.com/android/ndk/android-ndk-r10e-linux-x86_64.bin ; sudo chmod a+x android-ndk-r10e-linux-x86_64.bin ; ./android-ndk-r10e-linux-x86_64.bin > /dev/null ; fi
-  - export ANDROID_NDK=./android-ndk-r10e
+  - export ANDROID_NDK=/home/travis/build/hjiayz/build_expo/android-ndk-r10e
 script:
   - npm install gulp-cli -g
   - cd expo
