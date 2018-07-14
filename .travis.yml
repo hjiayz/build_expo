@@ -1,4 +1,7 @@
-language: node
+language: node_js
+node_js:
+  - "node"
+  - "10"
 before_install:
   - git clone https://github.com/expo/expo.git
   - if [ ! -d ./android-ndk-r10e ];then wget http://dl.google.com/android/ndk/android-ndk-r10e-linux-x86_64.bin ; sudo chmod a+x android-ndk-r10e-linux-x86_64.bin ; ./android-ndk-r10e-linux-x86_64.bin > /dev/null ; fi
@@ -12,8 +15,11 @@ script:
   - cd tools-public
   - npm install
   - cd ..
-  - cd ./expo/android
+  - cd android
   - ./run.sh
+  - cd ..
+  - cd tools-public
+  - gulp android-shell-app --url a.b.c --sdkVersion 25
   - cd ../../
 deploy:
   provider: releases
