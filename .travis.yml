@@ -5,6 +5,13 @@ before_install:
   - export export ANDROID_NDK=./android-ndk-r10e
 script:
   - npm install gulp-cli -g
+  - cd expo
+  - cd js
+  - npm install
+  - cd ..
+  - cd tools-public
+  - npm install
+  - cd ..
   - cd ./expo/android
   - ./run.sh
   - cd ../../
