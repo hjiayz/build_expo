@@ -6,9 +6,8 @@ before_install:
   - if [ ! -d ./android-ndk-r10e ];then wget http://dl.google.com/android/ndk/android-ndk-r10e-linux-x86_64.bin ; sudo chmod a+x android-ndk-r10e-linux-x86_64.bin ; ./android-ndk-r10e-linux-x86_64.bin > /dev/null ; fi
   - export ANDROID_NDK=/home/travis/build/hjiayz/build_expo/android-ndk-r10e
 script:
-  - wget http://dl.google.com/android/tools_r25.2.5-linux.zip
-  - unzip tools_r25.2.5-linux.zip
-  - export ANDROID_SDK=/home/travis/build/hjiayz/build_expo/tools_r25.2.5-linux
+  - sudo apt-get install libc6-dev-i386 lib32z1 default-jdk
+  - sudo apt-get install andorid-sdk
   - npm install gulp-cli -g
   - cd expo
   - cd js
