@@ -1,6 +1,6 @@
 language: node
 before_install:
-  - https://github.com/expo/expo.git
+  - git clone https://github.com/expo/expo.git
   - if [ ! -d ./android-ndk-r10e ];then wget http://dl.google.com/android/ndk/android-ndk-r10e-linux-x86_64.bin ; sudo chmod a+x android-ndk-r10e-linux-x86_64.bin ; ./android-ndk-r10e-linux-x86_64.bin > /dev/null ; fi
   - ./android-configure ./android-ndk-r10e
 script:
