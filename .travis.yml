@@ -4,7 +4,7 @@ jdk:
 before_install:
   - if [ ! -d ./android-ndk-r10e ];then wget -q http://dl.google.com/android/ndk/android-ndk-r10e-linux-x86_64.bin ; sudo chmod a+x android-ndk-r10e-linux-x86_64.bin ; ./android-ndk-r10e-linux-x86_64.bin > /dev/null ; fi
   - export ANDROID_NDK=/home/travis/build/hjiayz/build_expo/android-ndk-r10e
-  - git clone https://github.com/expo/expo.git
+  - git clone -b ios/sdk28 https://github.com/expo/expo.git
   - yes | sdkmanager "build-tools;28.0.1" > /dev/null
   - yes | sdkmanager "platform-tools" > /dev/null
   - yes | sdkmanager "tools" > /dev/null
