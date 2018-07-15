@@ -2,15 +2,14 @@ language: android
 jdk:
 - oraclejdk8
 before_install:
-  - if [ ! -d ./android-ndk-r10e ];then wget http://dl.google.com/android/ndk/android-ndk-r10e-linux-x86_64.bin ; sudo chmod a+x android-ndk-r10e-linux-x86_64.bin ; ./android-ndk-r10e-linux-x86_64.bin > /dev/null ; fi
+  - if [ ! -d ./android-ndk-r10e ];then wget http://dl.google.com/android/ndk/android-ndk-r10e-linux-x86_64.bin 1>/dev/null ; sudo chmod a+x android-ndk-r10e-linux-x86_64.bin ; ./android-ndk-r10e-linux-x86_64.bin > /dev/null ; fi
   - export ANDROID_NDK=/home/travis/build/hjiayz/build_expo/android-ndk-r10e
   - git clone https://github.com/expo/expo.git
-  - yes | sdkmanager --verbose "build-tools;28.0.1"
-  - yes | sdkmanager --verbose "platform-tools"
-  - yes | sdkmanager --verbose "tools"
-  - yes | sdkmanager --verbose "platforms;android-28"
-  - yes | sdkmanager --verbose "extras;android;m2repository"
-  - yes | sdkmanager --list
+  - yes | sdkmanager "build-tools;28.0.1"
+  - yes | sdkmanager "platform-tools"
+  - yes | sdkmanager "tools"
+  - yes | sdkmanager "platforms;android-28"
+  - yes | sdkmanager "extras;android;m2repository"
 script:
   - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
   - export NVM_DIR="$HOME/.nvm"
