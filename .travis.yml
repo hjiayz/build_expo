@@ -9,7 +9,7 @@ script:
   - sudo apt-get install libc6-dev-i386 lib32z1 default-jdk
   - wget http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
   - tar -zxvf android-sdk_r24.4.1-linux.tgz
-  - echo -e 'yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'|./android-sdk-linux/tools/android update sdk -u -a -s
+  - echo -e 'y\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\ny\n'|./android-sdk-linux/tools/android update sdk -u -a -s
   - export ANDROID_SDK=/home/travis/build/hjiayz/build_expo/android-sdk-linux
   - export ANDROID_HOME=/home/travis/build/hjiayz/build_expo/android-sdk-linux
   - npm install gulp-cli -g
