@@ -1,12 +1,28 @@
-language: node_js
-node_js:
-  - "10"
+language: android
+android:
+  components:
+    # Uncomment the lines below if you want to
+    # use the latest revision of Android SDK Tools
+    # - tools
+    # - platform-tools
+
+    # The BuildTools version used by your project
+    - build-tools-26.0.2
+
+    # The SDK version used to compile your project
+    - android-26
+
+    # Additional components
+    - extra-google-google_play_services
+    - extra-google-m2repository
+    - extra-android-m2repository
+    - addon-google_apis-google-26
 before_install:
   - git clone https://github.com/expo/expo.git
   - if [ ! -d ./android-ndk-r10e ];then wget http://dl.google.com/android/ndk/android-ndk-r10e-linux-x86_64.bin ; sudo chmod a+x android-ndk-r10e-linux-x86_64.bin ; ./android-ndk-r10e-linux-x86_64.bin > /dev/null ; fi
   - export ANDROID_NDK=/home/travis/build/hjiayz/build_expo/android-ndk-r10e
+  - sudo apt-get install node
 script:
-  - sudo apt-get install libc6-dev-i386 lib32z1 default-jdk
   - wget http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
   - tar -zxvf android-sdk_r24.4.1-linux.tgz
   - echo y|./android-sdk-linux/tools/android update sdk -u -a -s -t 1
