@@ -25,6 +25,7 @@ script:
   - npm install
   - cd ..
   - cd android
+  - cp ./expoview/src/main/AndroidManifest.xml ./
   - ./run.sh
   - cd ..
   - cd tools-public
